@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trying out the EAK Color Manager package</title>
+    <style>
+      /* 1.Initialize variables with default values once */
+      :root {
+        --eak-bg: #ffffff;
+        --eak-surface: #f4f4f4;
+        --eak-primary: #0077b6;
+        --eak-border: #cccccc;
+        --eak-text: #111111;
+      }
+
+      /* 2.Linking page elements to variables*/
+      body {
+        background-color: var(--eak-bg);
+        color: var(--eak-text);
+        font-family: sans-serif;
+        transition: all 0.3s ease;
+        padding: 40px;
+        direction: ltr;
+      }
+
+      .card {
+        background-color: var(--eak-surface);
+        border: 1px solid var(--eak-border);
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+      }
+
+      button {
+        background-color: var(--eak-primary);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Color control panel</h2>
+      <p>Try switching between pre-made themes or generating a custom theme.</p>
+
+      <button id="lightBtn">light theme</button>
+      <button id="darkBtn">Dark theme</button>
+
+      <hr style="border-color: var(--eak-border); margin: 20px 0" />
+
+      <label for="colorPicker">Choose a primary color :</label>
+      <input type="color" id="colorPicker" value="#0077b6" />
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
